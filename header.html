@@ -1,18 +1,19 @@
 {% macro render_header(video) %}
+
 <header class="sheader {% if video %}vheader{% endif %}">
 	<!-- Main navbar -->
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-primary">
+				<button type="button" class="navbar-toggle  {% if homepage %}navbar-adjust{% endif %}" data-toggle="collapse" data-target="#nav-primary">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 				<ul class="nav join visible-xs">
-					<li class="active"><a href="/subscribe">Subscribe</a></li>
+					<li class="active"><a href="/subscribe">Subscribe </a></li>
 				</ul>
 				<div>
 					<a class="logo" href="/" title=""></a>

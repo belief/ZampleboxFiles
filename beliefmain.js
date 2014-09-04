@@ -1,3 +1,20 @@
+function updateSchema(ele) {
+  var metaTitle = $('meta#meta-title'),
+      metaDescription = $('meta#meta-description'),
+      metaImage = $('meta#meta-image'),
+      schemaTitle = $('#schema-name'),
+      schemaDesc = $('#schema-desc'),
+      schemaImage = $('#schema-img');
+  
+  metaTitle.attr("content",$(ele).attr("data-title"));
+  metaDescription.attr("content",$(ele).attr("data-description"));
+  metaImage.attr("content",$(ele).attr("data-img-src"));
+  schemaTitle.html($(ele).attr("data-title"));
+  schemaDesc.html($(ele).attr("data-description"));
+  schemaImage.html($(ele).attr("data-img-src"));
+  
+}
+
 $(document).ready(function(){
   
   var indicatorIntervalID = setInterval(function(){ doBounce() }, 2000);
@@ -74,4 +91,9 @@ $(document).ready(function(){
 
       resizeVaporizer();
   }, 500);
+  
+  setTimeout( function() { 
+  }, 2000);
+  
+  
 });

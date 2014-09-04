@@ -8,14 +8,18 @@ h1, h2, h3, h4, h5,
   text-transform: uppercase;
 }
 
+.hidden-container {
+  display: none;
+}
+
 .splash-header-content .heading {
   font-size: 60px; 
 }
 
 .sheader .navbar-default {
-  background-color: #4fb84f; 
+    background-color: #4fb84f; 
     color: #FFFFFF;
-  min-height: 95px;
+    min-height: 95px;
     margin-bottom: 0;
 }
 
@@ -32,9 +36,10 @@ h1, h2, h3, h4, h5,
 }
 
 .logo {
+    margin-left: 10px;
     background-image: url('{{'images/ZampleBox-Logo-Solo_white.png' | asset_url }}');
     background-size: contain;
-  display: block;
+    display: block;
     width: 220px;
     height: 50px;
     background-repeat: no-repeat;
@@ -45,7 +50,7 @@ h1, h2, h3, h4, h5,
 }
 
 .sheader .navbar-default .nav {
-  margin-right: -25px;
+  margin-right: -15px;
 }
 
 
@@ -299,10 +304,12 @@ h1, h2, h3, h4, h5,
 
 .infographic .graphics-share {
     height: 55px;
-    width: 230px;
-    background-color: rgba(0,0,0,.1);
+    width: 210px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
     bottom: 15px;
     right: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 
 .infographic:hover .graphics-share-wrapper {
@@ -320,11 +327,12 @@ ul.social-media-share {
 }
 
 .social-media-share li {
+    border-radius: 5px;
     background-size: cover;
     display: block;
     width: 40px;
     float: left;
-    margin: 2px;
+    margin: 2px 5px;
     height: 40px;
     opacity: .85;
 }
@@ -355,11 +363,6 @@ ul.social-media-share {
 .google-share {
     background: #FFF url("https:{{ 'img/share_google.png' | asset_url }}") no-repeat;
 }
-
-.email-share {
-    background: #FFF url("https:{{ 'img/share_mail.png' | asset_url }}") no-repeat;
-}
-
 
 
 /*
@@ -480,24 +483,24 @@ ul.social-media-share {
   }
   
   .infographic .graphics-share {
-      width: 340px;
+      width: 280px;
       margin-left: auto;
       margin-right: auto;
-      height: 75px;
+      height: 70px;
   }
   
   ul.social-media-share {
       top: 5px;
-        width: 320px;
-        margin-left: auto;
-        margin-right: auto;
-    float: center;
+      width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+      float: center;
   }
   
   .social-media-share li {
       height: 60px;
       width: 60px;
-        margin-top: 5px;
+      margin-top: 5px;
   }
   
   .btn-action {
@@ -507,12 +510,12 @@ ul.social-media-share {
 
 @media (min-width: 768px) and (max-width: 990px) {
   .navbar-header {
-    width: 100%;
+      width: 100%;
   }
   
   .sheader .logo {
-    margin-left: auto;
-    margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
   }
   
    .sheader .navbar-default .nav {

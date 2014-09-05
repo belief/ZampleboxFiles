@@ -1,20 +1,3 @@
-function updateSchema(ele) {
-  var metaTitle = $('meta#meta-title'),
-      metaDescription = $('meta#meta-description'),
-      metaImage = $('meta#meta-image'),
-      schemaTitle = $('#schema-name'),
-      schemaDesc = $('#schema-desc'),
-      schemaImage = $('#schema-img');
-  
-  metaTitle.attr("content",$(ele).attr("data-title"));
-  metaDescription.attr("content",$(ele).attr("data-description"));
-  metaImage.attr("content",$(ele).attr("data-img-src"));
-  schemaTitle.html($(ele).attr("data-title"));
-  schemaDesc.html($(ele).attr("data-description"));
-  schemaImage.html($(ele).attr("data-img-src"));
-  
-}
-
 $(document).ready(function(){
   
   var indicatorIntervalID = setInterval(function(){ doBounce() }, 2000);
@@ -62,16 +45,6 @@ $(document).ready(function(){
       "slow"
     )
   }
-
-  function resizeVaporizer() {
-    var vapeImg = $("#vape-toggle img");
-
-    if ( $(window).width() < 768) {
-      vapeImg.attr('src',window.vapeMobileURL);
-    } else {
-      vapeImg.attr('src',window.vapeWideURL);
-    }
-  }
   
   $(window).resize(function() {
     if(this.resizeTO) {
@@ -82,14 +55,10 @@ $(document).ready(function(){
     }, 500);
   });
 
-  $(window).bind('resizeEnd', resizeVaporizer);
-
   setTimeout( function() {
       console.log('hiding dev stuff');
       $('.poptart').fadeOut();
       $('#cj_test_banner').fadeOut();
-
-      resizeVaporizer();
   }, 500);
   
   setTimeout( function() { 

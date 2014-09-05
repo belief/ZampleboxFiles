@@ -1,4 +1,4 @@
-{% set siteURL = 'beliefstaging.cratejoy.com/whyvape' %}
+{% set siteURL = 'beliefstaging.cratejoy.com/whyivape' %}
 <div class="graphics-share">
   <ul class="social-media-share">
     <li class="facebook-share">
@@ -8,11 +8,14 @@
       <a href="http://twitter.com/home?status={{ theTitle | urlencode }}%20More%20info%20at+https://{{ siteURL | urlencode }}" target="social"></a>
     </li>
     <li class="pinterest-share">
-      <a target="social" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2F{{ siteURL | urlencode }}&media={{ graphic | asset_url }}&description={{ theDescription | urlencode }}" data-pin-do="buttonPin" data-pin-config="above"></a>
+      <a target="social" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2F{{ siteURL | urlencode }}&media={{ share_graphic | asset_url }}&description={{ theDescription | urlencode }}" data-pin-do="buttonPin" data-pin-config="above"></a>
     </li>
     <li class="google-share">
-      <a href="#" onclick="javascript:updateSchema(this);window.open('https://plus.google.com/share?url=https://{{ siteURL }}','',
-  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-title="{{ theTitle }}" data-description="{{ theDescription }}" data-img-src="https:{{ graphic | asset_url }}"></a>
+      <a href="#" onclick="javascript:window.open('https://plus.google.com/share?url=https://{{ siteURL }}','',
+  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-title="{{ theTitle }}" data-description="{{ theDescription }}" data-img-src="https:{{ share_graphic | asset_url }}"></a>
+    </li>
+    <li class="download-share">
+      <a href="{{ share_graphic | asset_url }}"></a>
     </li>
   </ul>
 </div>

@@ -1,12 +1,100 @@
+/*
+ *  Site-wide
+ *
+ */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, 
-.heading {
+p,
+p.lead {
+  line-height: 1.55;
+}
+
+.splash-container h1, 
+.splash-container h2, 
+.splash-container h3, 
+.splash-container h4, 
+.splash-container h5, 
+strong,
+.splash-container .heading {
   font-family:'AvenirNextLTW01-Heavy';
   text-transform: uppercase;
 }
+
+.other-products .heading.main {
+  font-size: 25px; 
+}
+
+.heading {
+  text-transform: none;  
+}
+
+.sfooter strong {
+  text-transform: none;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+}
+
+.visible-xs {
+  font-family: 'Lato-Regular', sans-serif;
+}
+
+p > strong {
+  font-family: 'Lato-Bold', sans-serif;
+  text-transform: none;
+}
+
+.sheader .logo::after,
+.zample-logo:after {
+  content: '';
+}
+
+.sheader .logo::before,
+.zample-logo:before  {
+  content: '';
+}
+
+.logo{
+    margin-left: 10px;
+    background-size: contain;
+    display: block;
+    width: 220px;
+    height: 50px;
+    background-repeat: no-repeat;
+}
+
+
+.zample-logo {
+  background-repeat:no-repeat;
+    background-position: bottom left;
+    display: inline-block;
+    width: 310px;
+    height: 50px;
+    background-size:100%;
+}
+
+.heading.green .zample-logo {
+    background-image: url('{{'images/ZampleBox-Logo-Solo_light_green.png' | asset_url }}');
+}
+
+.logo {
+    background-image: url('{{'images/ZampleBox-Logo-Solo_white.png' | asset_url }}');
+}
+
+.zample-logo {
+    background-image: url('{{'images/ZampleBox-Logo-Solo_grey.png' | asset_url }}'); 
+}
+
+.testimonials .zample-logo {
+    background-image: url('{{'images/ZampleBox-Logo-Solo_white.png' | asset_url }}');
+}
+
+/*
+ *  General
+ *
+ */
 
 .hidden-container {
   display: none;
@@ -25,24 +113,6 @@ h1, h2, h3, h4, h5,
 
 .sheader .container .subscribe-mobile-hidden {
   display: none;
-}
-
-.sheader .logo::after {
-  content: '';
-}
-
-.sheader .logo::before {
-  content: '';
-}
-
-.logo {
-    margin-left: 10px;
-    background-image: url('{{'images/ZampleBox-Logo-Solo_white.png' | asset_url }}');
-    background-size: contain;
-    display: block;
-    width: 220px;
-    height: 50px;
-    background-repeat: no-repeat;
 }
 
 .sheader .navbar-default .nav a {
@@ -124,13 +194,24 @@ h1, h2, h3, h4, h5,
  * Buttons
  * 
  */
-.splash-container .btn-action,
+.splash-container .btn-action {
+    background-color: #FFFFFF;
+    color: rgb(16,102,61);
+    box-shadow: none;
+}
+
+.splash-container .btn-action:hover {
+    background-color:  #169051;
+    box-shadow: none;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 .sheader .navbar-default .nav .active a {
     background-color: rgb(16,102,61);
     box-shadow: none;
 }
 
-.splash-container .btn-action:hover,
 .sheader .navbar-default .nav .active a:hover {
     background-color:  #169051;
     box-shadow: none;
@@ -179,6 +260,29 @@ h1, h2, h3, h4, h5,
  * Infographics
  * 
  */
+.infographic-bg-1,
+.infographic-bg-2,
+.infographic-bg-3 {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;  
+}
+
+.infographic-bg-1 {
+  background-image: url('{{ "images/vaporizer.png" | asset_url }}');
+  height: 700px;
+}
+
+.infographic-bg-2 {
+  background-image: url('{{ "images/cig_juice_widev2.png" | asset_url }}');
+  height: 450px;
+}
+
+.infographic-bg-3 {
+  background-image: url('{{ "images/equipmentfull.png" | asset_url }}');
+  height: 500px;
+}
+
 .infographic-1 {
   min-height: 500px; 
     background-color: rgb(16,102,61);
@@ -186,12 +290,12 @@ h1, h2, h3, h4, h5,
 
 .infographic-2 {
   min-height: 500px; 
-    background-color: #169051;
+    background-color: rgb(19,146,85);
 }
 
 .infographic-3 {
   min-height: 500px; 
-    background-color: #4fb84f;
+    background-color: rgb(85,182,89);
 }
 
 .infographic-1 h1,
@@ -304,7 +408,7 @@ h1, h2, h3, h4, h5,
 
 .infographic .graphics-share {
     height: 55px;
-    width: 210px;
+    width: 260px;
     background-color: #FFFFFF;
     border-radius: 5px;
     bottom: 15px;
@@ -364,6 +468,9 @@ ul.social-media-share {
     background: #FFF url("https:{{ 'img/share_google.png' | asset_url }}") no-repeat;
 }
 
+.download-share {
+    background: #FFF url("https:{{ 'img/share_download.png' | asset_url }}") no-repeat;
+}
 
 /*
  * Media
@@ -391,11 +498,30 @@ ul.social-media-share {
   }
   
   .visible-xs {
-  margin-top: 105px;
+    margin-top: 105px;
   }
   
   .visible-xs .active {
     display: none;
+  }
+  
+  
+  h2.visible-xs {
+  font-size: 35px;
+  }
+  
+  .infographic-bg-1 {
+    background-image: url('{{ "images/mobile_vape_pen.jpg" | asset_url }}');
+    height: 500px;
+  }
+
+  .infographic-bg-2 {
+    background-image: url('{{ "images/cig-juice_mobile.png" | asset_url }}');
+    height: 400px;
+  }
+
+  .infographic-bg-3 {
+    height: 215px;
   }
 }
 
@@ -483,7 +609,7 @@ ul.social-media-share {
   }
   
   .infographic .graphics-share {
-      width: 280px;
+      width: 350px;
       margin-left: auto;
       margin-right: auto;
       height: 70px;
@@ -491,7 +617,7 @@ ul.social-media-share {
   
   ul.social-media-share {
       top: 5px;
-      width: 280px;
+      width: 350px;
       margin-left: auto;
       margin-right: auto;
       float: center;
@@ -508,7 +634,28 @@ ul.social-media-share {
   }
 }
 
+@media (min-width:480px) and (max-width: 768px) {
+  .infographic-bg-1 {
+    background-image: url('{{ "images/mobile_vape_pen.jpg" | asset_url }}');
+    height: 650px;
+  }
+
+  .infographic-bg-2 {
+    background-image: url('{{ "images/cig-juice_mobile.png" | asset_url }}');
+    height: 550px;
+  }
+
+  .infographic-bg-3 {
+    height: 325px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 990px) {
+    .sheader .video .poster hgroup h1 {
+    margin-top: 120px;
+    font-size: 50px;
+  }
+  
   .navbar-header {
       width: 100%;
   }
@@ -522,4 +669,18 @@ ul.social-media-share {
       margin-right: auto;
       margin-left: 20px;
    }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+   .infographic-bg-1 {
+    height: 600px;
+  }
+
+  .infographic-bg-2 {
+    height: 350px;
+  }
+
+  .infographic-bg-3 {
+    height: 425px;
+  }
 }

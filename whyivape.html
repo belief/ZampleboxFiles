@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% import "blocks/content-navigator.html" as nav %}
+{% block splash %}About{% endblock %}
+
+
+{% block adtl_meta %}
+<meta property="og:image" content="{{ 'images/infographic-1-share.png' | asset_url }}"/>
+<meta property="og:image" content="{{ 'images/infographic-2-share.png' | asset_url }}"/>
+<meta property="og:image" content="{{ 'images/infographic-3-share.png' | asset_url }}"/>
+{% endblock %}
+
+{% block page_content %}
+
+<div class="splash-container">
+  <div class="container">
+        <section class="splash-header-content">
+          {% set theTitle = "Why I Vape?" %}
+          {% set theDescription = "At ZampleBox, we're passionate about changing lives for the better. We firmly believe in second changes and want to help our family of vapers succeed. We vape for life: to both promote life and to vape as a lifestyle change for the betterment of society. We're out to change the world and save lives by making vaping more fun, easy and accessible. Learn more about why vaping is the one and only alternative to cigarettes." %}
+          <h1 class="heading main">{{ theTitle }}</h1> 
+          <p>
+            {{ theDescription }}
+          </p>
+          <div class="splash-indicator-wrapper">
+            <div class="scroll-indicator" id="indicator">
+            </div>
+          </div>
+        </section>
+  </div>
+</div>
+<div class="splash-container infographic-1">
+  <div class="container">
+  <section class="info-text">
+      {% set theTitle = "The Vaporizer" %}
+      {% set theDescription = "At first glance, a vaporizer is intimidating. But if you break it up into its components it's easy to see and understand the science behind vapor." %}
+      <h1 class="heading">{{ theTitle }}</h1>
+      <p>
+        {{ theDescription }}
+      </p>
+      <article class="infographic-container">
+        <div id="vape-toggle" class="infographic left-graphic full-graphic overlap" itemtype="http://schema.org/Product">
+          {% set graphic = 'images/vaporizer.png' %}
+          {% set share_graphic = 'images/infographic-1-share.png' %}
+          <div class="hidden-container">
+            {{ share_graphic | asset_url | img_tag }}
+          </div>
+          <div class="infographic-bg-1 the-img"></div>
+          <div class="graphics-share-wrapper">
+            {% include "blocks/sharing.html" %}
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="splash-container infographic-2">
+  <div class="container">
+  <section class="info-text">
+      {% set theTitle = "E-Juice vs Cigarettes" %}
+      {% set theDescription = "E-liquids contain a mixture of propylene glycol, vegetable glycerin, nicotine, and food-grade flavorings. Cigarettes contain anywhere between 4000 and 7000 chemicals, including arsenic, formaldehyde, methanol, ammonia, and carbon moxide." %}
+      <h1 class="heading">{{ theTitle }}</h1>
+      <p>
+        {{ theDescription }}  
+      </p>
+      <article class="infographic-container">
+        <div id="vape-cig-toggle" class="infographic left-graphic full-graphic">
+          {% set graphic = 'images/cig_juice_widev2.png' %}
+          {% set share_graphic = 'images/infographic-2-share.png' %}
+          <div class="hidden-container">
+            {{ share_graphic | asset_url | img_tag }}
+          </div>
+          <div class="infographic-bg-2 the-img"></div>
+          <div class="graphics-share-wrapper">
+            {% include "blocks/sharing.html" %}
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="splash-container infographic-3">
+  <div class="container">
+  <section class="info-text">
+      {% set theTitle = "Why ZampleBox?" %}
+      {% set theDescription = "ZampleBox is a delicious assortment of the best and cleanest e-juices on the market. Every month, we'll send you a custom-tailored ZampleBox packed with e-liquids at up to 70% off retail value. We offer variety, quality, and fun, but most importantly, we offer community. We take pride in being a community first and a service second. Everything we do revolves around improving the quality of life for our international family of vapers." %}
+      
+      <h1 class="heading">{{ theTitle }}</h1>
+      <p>
+        {{ theDescription }}
+      </p>
+      <article class="infographic-container">
+        <div class="infographic left-graphic full-graphic">
+          {% set graphic = 'images/equipmentfull.png' %}
+          {% set share_graphic = 'images/infographic-3-share.png' %}
+          <div class="hidden-container">
+            {{ share_graphic | asset_url | img_tag }}
+          </div>
+          <div class="infographic-bg-3 the-img"></div>
+          <div class="graphics-share-wrapper">
+            {% include "blocks/sharing.html" %}
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="splash-container action">
+  <div class="container">
+    <section class="text-center button-bottom">
+      <a href="/subscribe">
+          <button type="button" class="btn-action">Subscribe</button>
+      </a>
+    </section>
+    <section class="tagboard">
+      <div id="tagboard-embed"></div>
+      <script>var tagboardOptions = {tagboard:"WhyIVape/185112", postCount: 20, mobilePostCount: 10, darkMode: true, autoLoad: true};</script>
+      <script src="https://tagboard.com/public/js/embed.js"></script>
+    </section>
+  </div>
+</div>
+
+{% endblock %}
+ 
+{% block page_script %}
+  {{ 'js/jquery.js' | asset_url | javascript_tag }}
+  {{ js.base() }}
+  {{ 'js/jquery-ui.min.js' | asset_url | javascript_tag }}
+  {{ 'js/jquery.cookie.js' | asset_url | javascript_tag }}
+  {# 'js/underscore-min.js' | asset_url | javascript_tag #}
+  {{ 'js/bootstrap.min.js' | asset_url | javascript_tag }}
+  {{ 'js/age_gate.js' | asset_url | javascript_tag }}
+  {{ 'js/main.js' | asset_url | javascript_tag }}
+  {{ 'js/beliefmain.js' | asset_url | javascript_tag }}
+{% endblock %}

@@ -1,19 +1,18 @@
 {% macro render_header(video) %}
-
 <header class="sheader {% if video %}vheader{% endif %}">
 	<!-- Main navbar -->
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle  {% if homepage %}navbar-adjust{% endif %}" data-toggle="collapse" data-target="#nav-primary">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-primary">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 				<ul class="nav join visible-xs">
-					<li class="active"><a href="/subscribe">Subscribe </a></li>
+					<li class="active"><a href="/subscribe">Subscribe</a></li>
 				</ul>
 				<div>
 					<a class="logo" href="/" title=""></a>
@@ -22,8 +21,7 @@
 
 			<div class="collapse navbar-collapse" id="nav-primary">
 				<ul class="nav navbar-nav navbar-right hidden-xs">
-					<li><a href="/subscribe">Subscribe</a></li>
-					<li><a href="/whyivape">Why I Vape</a></li>
+					<li class="hidden-xs active"><a href="/subscribe">Subscribe</a></li>
                     <li><a href="/shop">Shop</a></li>
                     <li><a href="http://community.zamplebox.com">Community</a></li>
 					<li><a href="/about">About</a></li>
@@ -39,7 +37,6 @@
 						</div>
 						<div class="area-menu">
 							<ul class="nav navbar-nav">
-								<li><a href="/whyivape">Why I Vape</a></li>
 								<li><a href="/shop">Shop</a></li>
 								<li><a href="http://community.zamplebox.com">Community</a></li>
 								<li><a href="/about">About</a></li>
@@ -50,10 +47,6 @@
 					</div>
 				</div>
 			</div><!-- /.navbar-collapse -->
-          	
-            <ul class="nav join subscribe-mobile-hidden">
-                <li class="active"><a href="/subscribe">Subscribe</a></li>
-            </ul>
 		</div><!-- /.container -->
 	</nav>
 	<!-- /Main navbar -->
@@ -84,3 +77,4 @@
 
 </header>
 {% endmacro %}
+

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+{% import "header.html" as hdr with context %}
+
+<html class="{% block page_class %}{% endblock %}">
+	<head>
+		{% include "head.html" %}
+        {% block adtl_meta %}
+		{% endblock %}
+	</head>
+	<body>
+		{% block modals %}
+		{% include "modals/age-gate.html" %}
+		{% endblock %}  
+
+		{% block topbar_content %}
+		{% include "topbar.html" %}
+		{% endblock %}
+
+		{% block header_content %}
+		{{ hdr.render_header(false) }}
+		{% endblock %}
+
+		{% block page_content %}
+		{% endblock %}
+
+		{% include "footer.html" %}
+
+		{% block page_script %}
+	    {{ 'js/jquery.js' | asset_url | javascript_tag }}
+      	{{ js.base() }}
+	    {{ 'js/jquery-ui.min.js' | asset_url | javascript_tag }}
+	    {{ 'js/jquery.cookie.js' | asset_url | javascript_tag }}
+		{# 'js/underscore-min.js' | asset_url | javascript_tag #}
+		{{ 'js/bootstrap.min.js' | asset_url | javascript_tag }}
+		{{ 'js/age_gate.js' | asset_url | javascript_tag }}
+		{{ 'js/main.js' | asset_url | javascript_tag }}
+		{% endblock %}
+
+		{% include "ga.html" %}
+      {% include "adroll.html" %}
+      {% include "olark.html" %}
+      {% include "getkudos.html" %}
+	</body>
+</html> 

@@ -1,0 +1,43 @@
+<div class="bar-top">
+  <div class="slogan"><a href="/subscribe" class="cf-bold">Order NOW</a> & we will ship your box in 1-2 business days.<span>&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/zamplebox" class="cf-bold">Like us?</a> Become a ZampleBox Community Member with one click:</span></div>
+	<div class="socialbox">
+		<iframe src='//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fzamplebox&width&layout=button_count&action=like&show_faces=false&share=true&height=21&appId=159848747459550' scrolling='no' frameborder='0' style='border:none; overflow:hidden; height:21px;' allowTransparency='true'></iframe>
+	</div>
+	<div class="nav-user">
+		<ul class="clearfix">
+
+			<li class="dropdown">
+			<span data-toggle="dropdown" class="go-cart">
+				{% set cart = active_cart() %}
+				<span class="close-basket" data-toggle="dropdown"></span>              
+				<span class="general">Cart ({{ cart.products | length }})</span> 
+				<i class="sprite icon icon-basket"></i> 
+				<span class="details">
+					<span>({{ cart.procucts | length }})</span>
+					{{ cart.total | currency }}
+				</span>
+			</span>
+			{% include "blocks/basket.html" %}
+			</li>
+
+			{% if guest %}
+				<li class="login">
+					<a href="/customer/login">Login</a>
+				</li>
+			{% else %}
+				<li class="dropdown">
+					<span data-toggle="dropdown" class="account-menu">
+						<span class="">{{ customer.name }}</span>
+						<i class="icon-user"></i>
+					</span>
+
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+						<li><a href="/customer/account">My Account</a></li>
+						<li><a href="/customer/logout">Sign Out</a></li>
+					</ul>
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+
